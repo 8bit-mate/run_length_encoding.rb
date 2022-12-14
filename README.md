@@ -39,7 +39,7 @@ obj.encode(data [, separator]) -> array
 
 #### Returns
 
-* *[Array<Hash{:chunk, :count}>]*
+* *Array<Hash{:chunk, :count}>*
 
     Encoded data, where:
     * :chunk: a repeated element;

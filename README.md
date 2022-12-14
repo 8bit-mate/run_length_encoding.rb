@@ -53,23 +53,23 @@ require 'run_length_encoding'
 rle = RunLengthEncoding.new
 
 # Encoding an array:
-a = ['foo', 'foo', 'bar', 'foo', 'foo', 'foo']
+a = %w[foo foo bar foo foo foo]
 
 rle.encode(a)
 # => [{:chunk=>"foo", :count=>2}, {:chunk=>"bar", :count=>1}, {:chunk=>"foo", :count=>3}]
 
 # Encoding a string with a default separator (each character is treated as a single element):
-srt = 'foo"
+str = 'foo'
 rle.encode(str)
 # => [{:chunk=>"f", :count=>1}, {:chunk=>"o", :count=>2}]
 
 # Encoding a string with a custom separator:
-str = 'foo_foo_bar"
+str = 'foo_foo_bar'
 rle.encode(str, '_')
 # => [{:chunk=>"foo", :count=>2}, {:chunk=>"bar", :count=>1}]
 
 # Encoding an enumerator:
-str  = 'foo'
+str = 'foo'
 rle.encode(str.each_byte)
 # => [{:chunk=>102, :count=>1}, {:chunk=>111, :count=>2}]
 ```

@@ -27,17 +27,20 @@ obj.encode(data [, separator]) -> array
 #### Arguments
 
 * *data*
+
     Data to encode. Supported types:
     * Array;
     * String;
     * Enumerator.
 
 * *separator*
+
     A String or Regexp to split the string into single elements. Used only if *data* is a String.
 
 #### Returns
 
 * *[Array<Hash{:chunk, :count}>]*
+
     Encoded data, where:
     * :chunk: a repeated element;
     * :count: how many times the element is repeated.

@@ -92,7 +92,7 @@ obj.decode(data) -> array
 
 Array<Object>
 
-    Decoded data.
+Decoded data.
 
 <!-- -->
 

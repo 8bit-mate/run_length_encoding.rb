@@ -82,6 +82,7 @@ obj.decode(data) -> array
 #### Arguments
 
 * *data*
+
     Data to decode in the following format:
     Array<Hash{:chunk => Object, :count => Integer}>, where:
     * :chunk => Object: a repeated element;
@@ -90,6 +91,7 @@ obj.decode(data) -> array
 #### Returns
 
 * *Array<Object>*
+
     Decoded data.
 
 ### Decoding example

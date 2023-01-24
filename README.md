@@ -92,13 +92,13 @@ obj.decode(data) -> array
 
 * Array<Object>
 
-Decoded data.
+    Decoded data.
 
 <!-- end of list -->
 
 </ul>
 
-### Decoding example
+## Decoding example
 
 ```ruby
 require 'run_length_encoding'

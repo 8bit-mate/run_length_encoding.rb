@@ -93,7 +93,7 @@ obj.decode(data) -> array
 + _Array<Object>_
 
     Decoded data.
-<a/>
+<!-- -->
 
 ### Decoding example
 

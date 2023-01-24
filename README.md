@@ -28,23 +28,23 @@ obj.encode(data [, separator]) -> array
 
 + _data_
 
-    Data to encode. Supported types:
-    - Array;
-    - String;
-    - Enumerator.
+Data to encode. Supported types:
+- Array;
+- String;
+- Enumerator.
 
 + _separator_
 
-    A String or Regexp to split the string into single elements. Used only if _data_ is a String.
+A String or Regexp to split the string into single elements. Used only if _data_ is a String.
 
 #### Returns
 
 + _Array<Hash{:chunk => Object, :count => Integer}>_
 
-    Encoded data in the following format:
-    Array<Hash{:chunk => Object, :count => Integer}>, where:
-    - :chunk => Object: a repeated element;
-    - :count => Integer: how many times the element is repeated.
+Encoded data in the following format:
+Array<Hash{:chunk => Object, :count => Integer}>, where:
+- :chunk => Object: a repeated element;
+- :count => Integer: how many times the element is repeated.
 
 ### Encoding examples
 
@@ -83,10 +83,10 @@ obj.decode(data) -> array
 
 + _data_
 
-    Data to decode in the following format:
-    Array<Hash{:chunk => Object, :count => Integer}>, where:
-    - :chunk => Object: a repeated element;
-    - :count => Integer: how many times the element is repeated.
+Data to decode in the following format:
+Array<Hash{:chunk => Object, :count => Integer}>, where:
+- :chunk => Object: a repeated element;
+- :count => Integer: how many times the element is repeated.
 
 #### Returns
 

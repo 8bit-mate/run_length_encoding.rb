@@ -3,9 +3,9 @@
 require_relative "lib/run_length_encoding/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "run_length_encoding"
+  spec.name          = "run_length_encoding_rb"
   spec.version       = RunLengthEncoding::VERSION
-  spec.authors       = ["Mate"]
+  spec.authors       = ["8bit-mate"]
 
   spec.summary       = "Run-length encoding/decoding."
   spec.homepage      = "https://github.com/8bit-mate/run_length_encoding.rb"

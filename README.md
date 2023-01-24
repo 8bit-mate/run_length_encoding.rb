@@ -42,8 +42,8 @@ obj.encode(data [, separator]) -> array
 * *Array<Hash{:chunk, :count}>*
 
     Encoded data, where:
-    * :chunk: a repeated element;
-    * :count: how many times the element is repeated.
+    * [Object] :chunk: a repeated element;
+    * [Integer] :count: how many times the element is repeated.
 
 #### Examples
 

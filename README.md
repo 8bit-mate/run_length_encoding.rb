@@ -43,10 +43,10 @@ obj.encode(data [, separator]) -> array
 
     Encoded data in the following format:
     Array<Hash{:chunk => Object, :count => Integer}>, where:
-    * [Object] :chunk: a repeated element;
-    * [Integer] :count: how many times the element is repeated.
+    * :chunk => Object: a repeated element;
+    * :count => Integer: how many times the element is repeated.
 
-#### Encoding examples
+### Encoding examples
 
 ```ruby
 require 'run_length_encoding'
@@ -84,15 +84,15 @@ obj.decode(data) -> array
 * *data*
     Data to decode in the following format:
     Array<Hash{:chunk => Object, :count => Integer}>, where:
-    * [Object] :chunk: a repeated element;
-    * [Integer] :count: how many times the element is repeated.
+    * :chunk => Object: a repeated element;
+    * :count => Integer: how many times the element is repeated.
 
 #### Returns
 
 * *Array<Object>*
     Decoded data.
 
-#### Decoding example
+### Decoding example
 
 ```ruby
 require 'run_length_encoding'

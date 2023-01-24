@@ -94,7 +94,9 @@ obj.decode(data) -> array
 
 Decoded data.
 
-<!-- -->
+<!-- end of list -->
+
+</ul>
 
 ### Decoding example
 

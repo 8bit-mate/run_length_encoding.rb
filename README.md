@@ -7,7 +7,7 @@ A simple gem that does run-length encoding.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'run_length_encoding'
+gem 'run_length_encoding_rb'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install run_length_encoding
+    $ gem install run_length_encoding_rb
 
 ## Usage
 
@@ -39,39 +39,76 @@ obj.encode(data [, separator]) -> array
 
 #### Returns
 
-* *Array<Hash{:chunk, :count}>*
+* *Array<Hash{:chunk => Object, :count => Integer}>*
 
-    Encoded data, where:
+    Encoded data in the following format:
+    Array<Hash{:chunk => Object, :count => Integer}>, where:
     * [Object] :chunk: a repeated element;
     * [Integer] :count: how many times the element is repeated.
 
-#### Examples
+#### Encoding examples
 
 ```ruby
 require 'run_length_encoding'
 
 rle = RunLengthEncoding.new
 
-# Encoding an array:
+# Encode an array:
 a = %w[foo foo bar foo foo foo]
 
 rle.encode(a)
 # => [{:chunk=>"foo", :count=>2}, {:chunk=>"bar", :count=>1}, {:chunk=>"foo", :count=>3}]
 
-# Encoding a string with a default separator (each character is treated as a single element):
+# Encode a string with a default separator (each character is treated as a single element):
 str = 'foo'
 rle.encode(str)
 # => [{:chunk=>"f", :count=>1}, {:chunk=>"o", :count=>2}]
 
-# Encoding a string with a custom separator:
+# Encode a string with a custom separator:
 str = 'foo_foo_bar'
 rle.encode(str, '_')
 # => [{:chunk=>"foo", :count=>2}, {:chunk=>"bar", :count=>1}]
 
-# Encoding an enumerator:
+# Encode an enumerator:
 str = 'foo'
 rle.encode(str.each_byte)
 # => [{:chunk=>102, :count=>1}, {:chunk=>111, :count=>2}]
+```
+
+### Decoding
+
+obj.decode(data) -> array
+
+#### Arguments
+
+* *data*
+    Data to decode in the following format:
+    Array<Hash{:chunk => Object, :count => Integer}>, where:
+    * [Object] :chunk: a repeated element;
+    * [Integer] :count: how many times the element is repeated.
+
+#### Returns
+
+* *Array<Object>*
+    Decoded data.
+
+#### Decoding example
+
+```ruby
+require 'run_length_encoding'
+
+rle = RunLengthEncoding.new
+
+# Decode data of mixed types:
+data = [
+  { count: 3, chunk: "foo" },
+  { count: 1, chunk: "bar" },
+  { count: 2, chunk: nil },
+  { count: 4, chunk: 0 }
+]
+
+rle.decode(data)
+# => ["foo", "foo", "foo", "bar", nil, nil, 0, 0, 0, 0]
 ```
 
 ## Development

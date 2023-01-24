@@ -29,9 +29,9 @@ obj.encode(data [, separator]) -> array
 + _data_
 
     Data to encode. Supported types:
-    + Array;
-    + String;
-    + Enumerator.
+    - Array;
+    - String;
+    - Enumerator.
 
 + _separator_
 
@@ -43,8 +43,8 @@ obj.encode(data [, separator]) -> array
 
     Encoded data in the following format:
     Array<Hash{:chunk => Object, :count => Integer}>, where:
-    + :chunk => Object: a repeated element;
-    + :count => Integer: how many times the element is repeated.
+    - :chunk => Object: a repeated element;
+    - :count => Integer: how many times the element is repeated.
 
 ### Encoding examples
 
@@ -85,8 +85,8 @@ obj.decode(data) -> array
 
     Data to decode in the following format:
     Array<Hash{:chunk => Object, :count => Integer}>, where:
-    + :chunk => Object: a repeated element;
-    + :count => Integer: how many times the element is repeated.
+    - :chunk => Object: a repeated element;
+    - :count => Integer: how many times the element is repeated.
 
 #### Returns
 

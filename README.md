@@ -90,9 +90,10 @@ obj.decode(data) -> array
 
 #### Returns
 
-+ Array<Object>
++ _Array<Object>_
 
     Decoded data.
+[//]: # (End of list)
 
 ### Decoding example
 

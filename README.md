@@ -26,25 +26,25 @@ obj.encode(data [, separator]) -> array
 
 #### Arguments
 
-* *data*
++ _data_
 
     Data to encode. Supported types:
-    * Array;
-    * String;
-    * Enumerator.
+    + Array;
+    + String;
+    + Enumerator.
 
-* *separator*
++ _separator_
 
-    A String or Regexp to split the string into single elements. Used only if *data* is a String.
+    A String or Regexp to split the string into single elements. Used only if _data_ is a String.
 
 #### Returns
 
-* *Array<Hash{:chunk => Object, :count => Integer}>*
++ _Array<Hash{:chunk => Object, :count => Integer}>_
 
     Encoded data in the following format:
     Array<Hash{:chunk => Object, :count => Integer}>, where:
-    * :chunk => Object: a repeated element;
-    * :count => Integer: how many times the element is repeated.
+    + :chunk => Object: a repeated element;
+    + :count => Integer: how many times the element is repeated.
 
 #### Encoding examples
 
@@ -81,16 +81,16 @@ obj.decode(data) -> array
 
 #### Arguments
 
-* *data*
++ _data_
 
     Data to decode in the following format:
     Array<Hash{:chunk => Object, :count => Integer}>, where:
-    * :chunk => Object: a repeated element;
-    * :count => Integer: how many times the element is repeated.
+    + :chunk => Object: a repeated element;
+    + :count => Integer: how many times the element is repeated.
 
 #### Returns
 
-* *Array<Object>*
++ _Array<Object>_
 
     Decoded data.
 

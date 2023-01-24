@@ -46,7 +46,7 @@ obj.encode(data [, separator]) -> array
     + :chunk => Object: a repeated element;
     + :count => Integer: how many times the element is repeated.
 
-#### Encoding examples
+### Encoding examples
 
 ```ruby
 require 'run_length_encoding'
@@ -94,7 +94,7 @@ obj.decode(data) -> array
 
     Decoded data.
 
-#### Decoding example
+### Decoding example
 
 ```ruby
 require 'run_length_encoding'

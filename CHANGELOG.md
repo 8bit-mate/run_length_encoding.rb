@@ -1,4 +1,4 @@
-### 0.2.0 / 2022-12-15
+### 0.2.0 / 2023-01-25
 
 * Improvements:
   * Decoding is implemented now;

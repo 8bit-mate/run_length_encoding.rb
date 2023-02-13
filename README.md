@@ -1,3 +1,5 @@
+# run_length_encoding_rb [![Gem Version](https://badge.fury.io/rb/run_length_encoding_rb.svg)](https://badge.fury.io/rb/run_length_encoding_rb)
+
 ## Description
 
 A simple gem that does run-length encoding.

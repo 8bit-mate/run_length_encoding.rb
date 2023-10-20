@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    run_length_encoding_rb (0.2.0)
+    run_length_encoding_rb (0.2.1)
 
 GEM
   remote: https://rubygems.org/
@@ -37,4 +37,4 @@ DEPENDENCIES
   run_length_encoding_rb!
 
 BUNDLED WITH
-   2.2.3
+   2.4.19

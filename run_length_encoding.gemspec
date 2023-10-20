@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require_relative "lib/run_length_encoding/version"
+require_relative "lib/run_length_encoding_rb/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "run_length_encoding_rb"
-  spec.version       = RunLengthEncoding::VERSION
+  spec.version       = RunLengthEncodingRb::VERSION
   spec.authors       = ["8bit-mate"]
 
   spec.summary       = "Run-length encoding/decoding."
   spec.homepage      = "https://github.com/8bit-mate/run_length_encoding.rb"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 3.0.0")
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org/"
 

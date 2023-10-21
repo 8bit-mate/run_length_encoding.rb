@@ -1,16 +1,3 @@
-### 0.2.1 / 2023-01-25
+### 1.0.0 / 2023-10-21
 
-* Updated docs.
-
-### 0.2.0 / 2023-01-25
-
-* Improvements:
-  * Decoding is implemented now;
-  * Code was refactored;
-  * Changed gem's name to pass RubyGems.org name filter;
-  * Now gem is available at RubyGems.org.
-
-### 0.1.0 / 2022-12-15
-
-* Initial release:
-  * Only encoding is implemented yet.
+* New API, code refactoring, bug fixes.

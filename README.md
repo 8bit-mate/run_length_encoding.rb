@@ -2,14 +2,14 @@
 
 ## Description
 
-A simple gem that does run-length encoding.
+Run-length encoding for Ruby.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application"s Gemfile:
 
 ```ruby
-gem 'run_length_encoding_rb'
+gem "run_length_encoding_rb"
 ```
 
 And then execute:
@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ### Encoding
 
-obj.encode(data [, separator]) -> array
+RunLengthEncodingRb.encode(data [, separator]) -> array
 
 #### Arguments
 
@@ -37,44 +37,37 @@ obj.encode(data [, separator]) -> array
 
 + _separator_
 
-    A String or Regexp to split the string into single elements. Used only if _data_ is a String.
+    A String or Regexp to split the _data_ string into single elements. Used only if _data_ is a String.
 
 #### Returns
 
-+ _Array<Hash{:chunk => Object, :count => Integer}>_
++ _Array\<RunLengthEncodingRb::RLEElement\>_
 
-    Encoded data in the following format:
-    Array<Hash{:chunk => Object, :count => Integer}>, where:
-    - :chunk => Object: a repeated element;
-    - :count => Integer: how many times the element is repeated.
+    Encoded data. Each element is a RunLengthEncodingRb::RLEElement object with the attributes #chunk (the repeated element) and #run_length (how many times the element is repeated).
 
 ### Encoding examples
 
 ```ruby
-require 'run_length_encoding'
+require "run_length_encoding_rb"
 
-rle = RunLengthEncoding.new
+RLE = RunLengthEncodingRb
 
 # Encode an array:
 a = %w[foo foo bar foo foo foo]
+RLE.encode(a)
 
-rle.encode(a)
-# => [{:chunk=>"foo", :count=>2}, {:chunk=>"bar", :count=>1}, {:chunk=>"foo", :count=>3}]
+# Encode a string with a default separator (each character 
+# will be treated as a single element):
+str = "foo"
+RLE.encode(str)
 
-# Encode a string with a default separator (each character is treated as a single element):
-str = 'foo'
-rle.encode(str)
-# => [{:chunk=>"f", :count=>1}, {:chunk=>"o", :count=>2}]
-
-# Encode a string with a custom separator:
-str = 'foo_foo_bar'
-rle.encode(str, '_')
-# => [{:chunk=>"foo", :count=>2}, {:chunk=>"bar", :count=>1}]
+# Encode a string with a explicit separator:
+str = "foo_foo_bar"
+RLE.encode(str, "_")
 
 # Encode an enumerator:
-str = 'foo'
-rle.encode(str.each_byte)
-# => [{:chunk=>102, :count=>1}, {:chunk=>111, :count=>2}]
+str = "foo"
+RLE.encode(str.each_byte)
 ```
 
 ### Decoding
@@ -85,36 +78,29 @@ obj.decode(data) -> array
 
 + _data_
 
-    Data to decode in the following format:
-    Array<Hash{:chunk => Object, :count => Integer}>, where:
-    - :chunk => Object: a repeated element;
-    + :count => Integer: how many times the element is repeated.
+    Array of RunLengthEncodingRb::RLEElement (or any duck-typed objects, which have the obj#chunk and obj#run_length attributes).
 
 #### Returns
 
-Array<Object>
++ Array\<Object\>
 
-Decoded data.
-
-<!-- end of list -->
+    Decoded data.
 
 ### Decoding example
 
 ```ruby
-require 'run_length_encoding'
+require "run_length_encoding_rb"
 
-rle = RunLengthEncoding.new
+RLE = RunLengthEncodingRb
 
-# Decode data of mixed types:
 data = [
-  { count: 3, chunk: "foo" },
-  { count: 1, chunk: "bar" },
-  { count: 2, chunk: nil },
-  { count: 4, chunk: 1 }
+  RunLengthEncodingRb::RLEElement.new(chunk: "foo", run_length: 3),
+  RunLengthEncodingRb::RLEElement.new(chunk: "bar", run_length: 1),
+  RunLengthEncodingRb::RLEElement.new(chunk: nil, run_length: 2),
 ]
 
-rle.decode(data)
-# => ["foo", "foo", "foo", "bar", nil, nil, 1, 1, 1, 1]
+RLE.decode(data)
+# => ["foo", "foo", "foo", "bar", nil, nil]
 ```
 
 ## Development
